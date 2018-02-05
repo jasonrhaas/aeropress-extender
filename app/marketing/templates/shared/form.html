@@ -1,0 +1,9 @@
+<form action="submit/" method="post">
+  <div class="form-group">
+  	{% csrf_token %}
+  	{{ form }}
+  	<!-- <input type="button" value="Submit" /> -->
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email or send spam mail.</small>
+  </div>
+  <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+</form>

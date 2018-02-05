@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  {% include "shared/header.html" %}
+
+  <body>
+
+    {% include "shared/navbar.html" %}
+
+    <div id="hero" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center aero-background">
+      <div class="col-md-7 p-lg-7 mx-auto my-7">
+        <h1 class="display-3 font-weight-bold ">{{ heading.0.title }}</h1>
+        <p class="lead font-weight-normal">{{ heading.0.blurb }}</p>
+        <p class="font-weight-bold">Coming soon.  Enter your email to be notified for updates!</p>
+        <form action="/marketing/" method="post">
+          <div class="form-group">
+            {% csrf_token %}
+            {{ form }}
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email or send spam mail.</small>
+          </div>
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button> -->
+          <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">{{ heading.1.title }}</h2>
+          <p class="lead">{{ heading.1.blurb}}</p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img class="img-responsive" src="{% static 'images/wide_coffee_0_cropped.png' %}" alt="Github Mug" style="width:100%;">
+            </div>
+            <div class="col">
+              <img class="img-responsive" src="{% static 'images/wide_coffee_1_cropped.png' %}" alt="Generic Mug" style="width:100%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <img class="img-responsive" src="{% static 'images/wide_coffee_2_cropped.png' %}" alt="Starbucks Mug" style="width:100%">
+            </div>
+            <div class="col">
+              <img class="img-responsive" src="{% static 'images/wide_coffee_3_cropped.png' %}" alt="Colorful Mugs" style="width:100%">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="product" class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">{{ heading.2.title }}</h2>
+          <p class="lead">{{ heading.2.blurb }}</p>
+        </div>
+        <!-- <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div> -->
+        <img class="img-responsive" src="{% static 'images/aeropress_1.jpg' %}" alt="Aeropress set", style="width:100%">
+      </div>
+    </div>
+
+    {% include "shared/footer.html" %}
+    {% include "shared/js_cdn.html" %}
+  </body>
+</html>
