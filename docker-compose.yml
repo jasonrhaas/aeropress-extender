@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:10.1-alpine
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgweb:
+    image: sosedoff/pgweb
+    environment:
+        - DATABASE_URL=postgres://postgres:postgres@db:5432?sslmode=disable
+    links:
+        - db
+    ports:
+        - "8081:8081"
+    depends_on:
+      - db
+    restart: "on-failure:10"
+
+  web:
+    restart: unless-stopped
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/code/app
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    stdin_open: true
+    command: tail -f /dev/null
+
+volumes:
+  pgdata:
