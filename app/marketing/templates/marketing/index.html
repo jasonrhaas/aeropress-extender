@@ -7,20 +7,17 @@
 
     {% include "shared/navbar.html" %}
 
-    <div id="hero" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center aero-background">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center aero-background">
       <div class="col-md-7 p-lg-7 mx-auto my-7">
-        <h1 class="display-3 font-weight-bold ">{{ heading.0.title }}</h1>
+        <h1 class="display-3">{{ heading.0.title }}</h1>
         <p class="lead font-weight-normal">{{ heading.0.blurb }}</p>
-        <p class="font-weight-bold">Coming soon.  Enter your email to be notified for updates!</p>
-        <form action="/marketing/" method="post">
-          <div class="form-group">
-            {% csrf_token %}
-            {{ form }}
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email or send spam mail.</small>
-          </div>
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button> -->
-          <button type="submit" class="btn btn-primary" value="submit">Submit</button>
-        </form>
+        <figure class="figure">
+          <img class="figure-img img-fluid img-responsive rounded border border-dark rounded" src="{% static 'images/adapter_cropped.png' %}" alt="AeroPress XL 3d print" style="width:75%;">
+          <figcaption class="figure-caption">Place on top of mug</figcaption>
+        </figure>
+        <h5>Coming soon.  Enter your email to be notified for updates!</h5>
+        {% include "shared/form.html" %}
+        <!-- <img class="img-responsive rounded float-left" src="{% static 'images/aeropressxl_example_1.jpg' %}" alt="AeroPress XL example 1" style="width:50%;"> -->
       </div>
     </div>
 
@@ -33,18 +30,18 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <img class="img-responsive" src="{% static 'images/wide_coffee_0_cropped.png' %}" alt="Github Mug" style="width:100%;">
+              <img class="img-responsive rounded" src="{% static 'images/wide_coffee_0_cropped.png' %}" alt="Github Mug" style="width:100%;">
             </div>
             <div class="col">
-              <img class="img-responsive" src="{% static 'images/wide_coffee_1_cropped.png' %}" alt="Generic Mug" style="width:100%;">
+              <img class="img-responsive rounded" src="{% static 'images/wide_coffee_1_cropped.png' %}" alt="Generic Mug" style="width:100%;">
             </div>
           </div>
-          <div class="row">
+          <div class="row py-4">
             <div class="col">
-              <img class="img-responsive" src="{% static 'images/wide_coffee_2_cropped.png' %}" alt="Starbucks Mug" style="width:100%">
+              <img class="img-responsive rounded" src="{% static 'images/wide_coffee_2_cropped.png' %}" alt="Starbucks Mug" style="width:100%">
             </div>
             <div class="col">
-              <img class="img-responsive" src="{% static 'images/wide_coffee_3_cropped.png' %}" alt="Colorful Mugs" style="width:100%">
+              <img class="img-responsive rounded" src="{% static 'images/wide_coffee_3_cropped.png' %}" alt="Colorful Mugs" style="width:100%">
             </div>
           </div>
         </div>
@@ -59,7 +56,7 @@
       </div>
     </div>
 
-    {% include "shared/footer.html" %}
+    <!-- {% include "shared/footer.html" %} -->
     {% include "shared/js_cdn.html" %}
   </body>
 </html>

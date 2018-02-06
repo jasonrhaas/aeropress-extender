@@ -1,9 +1,10 @@
-<form action="submit/" method="post">
-  <div class="form-group">
+<form class="form-inline justify-content-center" method="post">
   	{% csrf_token %}
-  	{{ form }}
-  	<!-- <input type="button" value="Submit" /> -->
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email or send spam mail.</small>
-  </div>
-  <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+  <label class="sr-only" for="{{ form.email.id }}">Name</label>
+  <input type="email" class="form-control mb-2 mr-sm-2" id="{{ form.email.id }}" placeholder="you@example.com" name="email" maxlenth="{{ form.email.maxlength }}" required id="{{ form.email.id }}"/>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
 </form>
+
+
+<!--   	<input type='hidden' name='csrfmiddlewaretoken' value='k4zdeidFQ5VSsuOTHo9SR4aM0ApWDKXwPaR7ROHJe3l0nUiRDrLQ8HPbtvsOZ2jT' />
+  	<tr><th><label for="id_email">Email:</label></th><td><input type="email" name="email" maxlength="100" required id="id_email" /></td></tr> -->
