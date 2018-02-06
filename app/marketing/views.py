@@ -41,7 +41,7 @@ def index(request):
                      blurb="""Just place on top of your mug, and use the AeroPress as normal."""
                      )
 
-    company = dict(name='AeroPress Extendz',
+    company = dict(name='AeroPress XL',
                    vision=''
                    )
 
