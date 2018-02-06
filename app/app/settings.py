@@ -26,7 +26,7 @@ SECRET_KEY = 'ipdimee9*8lgq(q&ar7#gu8t3$-hb1#)dni9@$t%0*jfcg)m^b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aeropressxl.herokuapp.com']
 
 
 # Application definition
