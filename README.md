@@ -1,2 +1,2 @@
 # aeropress-extender
-Marketing page for the AeroPress Extender
+Marketing page for the AeroPress Extender.
