@@ -23,7 +23,7 @@ SECURE_SSL_REDIRECT = True
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ipdimee9*8lgq(q&ar7#gu8t3$-hb1#)dni9@$t%0*jfcg)m^b'
+SECRET_KEY = os.getenv('SECRET_KEY', 'ipdimee9*8lgq(q&ar7#gu8t3$-hb1#)dni9@$t%0*jfcg)m^b')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
