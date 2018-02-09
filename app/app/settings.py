@@ -30,6 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['aeropressxl.herokuapp.com',
                  'aeropressxl.com',
+                 'jumbobrew.com',
+                 'localhost',
                  ]
 
 

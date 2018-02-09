@@ -31,7 +31,7 @@ def index(request):
     else:
         form = EmailForm()
 
-    heading_0 = dict(title='AeroPress XL',
+    heading_0 = dict(title='JumboBrew',
                      blurb="""An AeroPress Adapter to use with Wide Mouth Mugs"""
                      )
     heading_1 = dict(title='Fits perfectly on large size mugs',
@@ -41,7 +41,7 @@ def index(request):
                      blurb="""Just place on top of your mug, and use the AeroPress as normal."""
                      )
 
-    company = dict(name='AeroPress XL',
+    company = dict(name='JumboBrew',
                    vision=''
                    )
 
