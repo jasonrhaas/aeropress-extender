@@ -1,7 +1,8 @@
-<form class="form-inline justify-content-center" method="post">
+<form class="form-inline justify-content-center" method="post" action="https://jumprock.co/mail/jumbobrew">
   	{% csrf_token %}
   <label class="sr-only" for="{{ form.email.id }}">Name</label>
   <input type="email" class="form-control mb-2 mr-sm-2" id="{{ form.email.id }}" placeholder="you@example.com" name="email" maxlenth="{{ form.email.maxlength }}" required id="{{ form.email.id }}"/>
+  <input type="hidden" name="after" value="https://jumbobrew.com/thanks/">
   <button type="submit" class="btn btn-primary mb-2">Submit</button>
 </form>
 

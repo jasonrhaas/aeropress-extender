@@ -37,7 +37,7 @@ services:
     depends_on:
       - db
     stdin_open: true
-    command: tail -f /dev/null
+    command: python app/manage.py runserver 0.0.0.0:8000
 
 volumes:
   pgdata:

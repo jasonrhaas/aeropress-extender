@@ -20,6 +20,11 @@
   }
 }*/
 
+body {
+  font-size: 1rem;
+  font-family: 'Sunflower', sans-serif;
+}
+
 /* Container holding the image and the text */
 .image-container {
     position: relative;
