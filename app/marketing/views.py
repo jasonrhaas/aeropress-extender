@@ -6,15 +6,24 @@ from .models import Question, InterestedPerson
 from .forms import EmailForm
 from django.core.mail import send_mail
 
+import logging
+# logging.basicConfig(level=logging.DEBUG)
+
+logger = logging.getLogger(__name__)
+# print(logger)
+
 
 def submit(request):
     if request.method == 'POST':
         form = EmailForm(request.POST)
-        # if form.is_valid():
-        #     form.save()
-        #     return HttpResponseRedirect('/thanks/')
-        return HttpResponseRedirect('/thanks/')
+        logger.debug(form)
+        print(form)
+        if form.is_valid():
+            logger.info('form is valid')
+            form.save()
+            return HttpResponseRedirect('/thanks/')
     else:
+        logger.info('form is invalid')
         form = EmailForm()
 
     context = dict(form=form)
@@ -24,6 +33,7 @@ def submit(request):
 
 def index(request):
     if request.method == 'POST':
+        logger.info('test')
         form = EmailForm(request.POST)
         if form.is_valid():
             form.save()
@@ -31,6 +41,8 @@ def index(request):
 
     else:
         form = EmailForm()
+
+    logger.info('testing index')
 
     heading_0 = dict(title='JumboBrew',
                      blurb="""An AeroPress Adapter to use with Wide Mouth Mugs"""
